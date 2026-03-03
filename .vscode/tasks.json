@@ -6,7 +6,7 @@
         {
             "label": "build-week01-teach",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week01/teach/teach.csproj",
@@ -19,7 +19,7 @@
         {
             "label": "build-week01-analyze",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week01/analyze/analyze.csproj",
@@ -32,7 +32,7 @@
         {
             "label": "build-week01-code",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week01/code/code.csproj",
@@ -45,7 +45,7 @@
         {
             "label": "build-week02-learn",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week02/learn/learn.csproj",
@@ -58,7 +58,7 @@
         {
             "label": "build-week02-teach",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week02/teach/teach.csproj",
@@ -71,7 +71,7 @@
         {
             "label": "build-week02-analyze",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week02/analyze/analyze.csproj",
@@ -84,7 +84,7 @@
         {
             "label": "build-week02-code",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week02/code/code.csproj",
@@ -97,7 +97,7 @@
         {
             "label": "build-week03-learn",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week03/learn/learn.csproj",
@@ -110,7 +110,7 @@
         {
             "label": "build-week03-teach",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week03/teach/teach.csproj",
@@ -123,7 +123,7 @@
         {
             "label": "build-week03-code",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week03/code/code.csproj",
@@ -136,7 +136,7 @@
         {
             "label": "build-week04-code",
             "command": "dotnet",
-            "type": "process",
+            "type": "shell",
             "args": [
                 "build",
                 "${workspaceFolder}/week04/code/code.csproj",
