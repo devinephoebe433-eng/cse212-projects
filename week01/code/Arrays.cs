@@ -1,37 +1,34 @@
+using System;
+using System.Collections.Generic;
+
 public static class Arrays
 {
-    // PLAN FOR MultiplesOf
-    // 1. Receive startNumber and count
-    // 2. Create a list to store multiples
-    // 3. Loop from 1 to count
-    // 4. Multiply startNumber by the loop number
-    // 5. Add result to the list
-    // 6. Return the list as an array
-    public static int[] MultiplesOf(int startNumber, int count)
+    // FIXED: return type and parameter type
+    public static double[] MultiplesOf(double start, int count)
     {
-        List<int> numbers = new List<int>();
+        double[] result = new double[count];
 
-        for (int i = 1; i <= count; i++)
+        for (int i = 0; i < count; i++)
         {
-            numbers.Add(startNumber * i);
+            result[i] = start * (i + 1);
         }
 
-        return numbers.ToArray();
+        return result;
     }
 
-    // PLAN FOR RotateRight
-    // 1. Save the last value
-    // 2. Move each element to the right
-    // 3. Put the last value at the first position
-    public static void RotateRight(int[] data)
+    // FIXED: correct method name
+    public static void RotateListRight(List<int> list, int rotations)
     {
-        int last = data[data.Length - 1];
+        int n = list.Count;
 
-        for (int i = data.Length - 1; i > 0; i--)
+        // Handle rotations bigger than list size
+        rotations = rotations % n;
+
+        for (int i = 0; i < rotations; i++)
         {
-            data[i] = data[i - 1];
+            int last = list[n - 1];
+            list.RemoveAt(n - 1);
+            list.Insert(0, last);
         }
-
-        data[0] = last;
     }
 }
