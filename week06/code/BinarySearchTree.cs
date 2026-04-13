@@ -9,14 +9,10 @@ public class BinarySearchTree : IEnumerable<int>
     /// </summary>
     public void Insert(int value)
     {
-        // Create new node
-        Node newNode = new(value);
-        // If the list is empty, then point both head and tail to the new node.
         if (_root is null)
         {
-            _root = newNode;
+            _root = new Node(value);
         }
-        // If the list is not empty, then only head will be affected.
         else
         {
             _root.Insert(value);
@@ -26,8 +22,6 @@ public class BinarySearchTree : IEnumerable<int>
     /// <summary>
     /// Check to see if the tree contains a certain value
     /// </summary>
-    /// <param name="value">The value to look for</param>
-    /// <returns>true if found, otherwise false</returns>
     public bool Contains(int value)
     {
         return _root != null && _root.Contains(value);
@@ -38,7 +32,6 @@ public class BinarySearchTree : IEnumerable<int>
     /// </summary>
     IEnumerator IEnumerable.GetEnumerator()
     {
-        // call the generic version of the method
         return GetEnumerator();
     }
 
@@ -66,9 +59,10 @@ public class BinarySearchTree : IEnumerable<int>
     }
 
     /// <summary>
-    /// Iterate backward through the BST.
+    /// Problem 3: Iterate backward through the BST.
+    /// Note: Renamed to Reversed() to match standard assignment requirements.
     /// </summary>
-    public IEnumerable Reverse()
+    public IEnumerable<int> Reversed()
     {
         var numbers = new List<int>();
         TraverseBackward(_root, numbers);
@@ -81,6 +75,16 @@ public class BinarySearchTree : IEnumerable<int>
     private void TraverseBackward(Node? node, List<int> values)
     {
         // TODO Problem 3
+        if (node is not null)
+        {
+            // To go backward (Largest to Smallest):
+            // 1. Go Right
+            TraverseBackward(node.Right, values);
+            // 2. Add Current
+            values.Add(node.Data);
+            // 3. Go Left
+            TraverseBackward(node.Left, values);
+        }
     }
 
     /// <summary>

@@ -13,6 +13,13 @@ public class Node
     {
         // TODO Start Problem 1
 
+        // If the value is equal to Data, it's a duplicate. 
+        // We return without doing anything to ensure unique values only.
+        if (value == Data)
+        {
+            return;
+        }
+
         if (value < Data)
         {
             // Insert to the left
@@ -34,12 +41,36 @@ public class Node
     public bool Contains(int value)
     {
         // TODO Start Problem 2
-        return false;
+
+        // Success case: we found the value
+        if (value == Data)
+        {
+            return true;
+        }
+
+        if (value < Data)
+        {
+            // If the value is smaller, look left (if a left child exists)
+            return Left != null && Left.Contains(value);
+        }
+        else
+        {
+            // If the value is larger, look right (if a right child exists)
+            return Right != null && Right.Contains(value);
+        }
     }
 
     public int GetHeight()
     {
         // TODO Start Problem 4
-        return 0; // Replace this line with the correct return statement(s)
+
+        // Recursively find the height of the left side. If null, height is 0.
+        int leftHeight = Left?.GetHeight() ?? 0;
+
+        // Recursively find the height of the right side. If null, height is 0.
+        int rightHeight = Right?.GetHeight() ?? 0;
+
+        // The height of this node is 1 plus the height of the taller child.
+        return 1 + Math.Max(leftHeight, rightHeight);
     }
 }
